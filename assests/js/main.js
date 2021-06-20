@@ -188,7 +188,23 @@ themeButton.addEventListener('click', () => {
 
 // Send Mail
 function sendMail(params){
-    
+  
+    if(document.getElementById("name").value == ""){
+        showErrorToast("Vui lòng nhập tên của bạn, cảm ơn.")
+        return false;;
+    }
+    if(document.getElementById("email").value == ""){
+        showErrorToast("Vui lòng nhập email của bạn, cảm ơn.")
+        return false;
+    }
+    if(document.getElementById("title").value == ""){
+        showErrorToast("Vui lòng nhập tiêu đề, cảm ơn.")
+        return false;
+    }
+    if(document.getElementById("message").value == ""){
+        showErrorToast("Vui lòng nhập lời nhắn, cảm ơn.")
+        return false;
+    }    
 
     var tempParams = {
         name: document.getElementById("name").value,
