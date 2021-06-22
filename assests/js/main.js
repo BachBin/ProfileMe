@@ -215,10 +215,18 @@ function sendMail(params){
     
     emailjs.send('service_225omp3','template_92kow4c',tempParams)
     .then((result)=>{
+        // Clear Input
+        ClearInput();        
         showSuccessToast('Tin nhắn đã được gửi, cảm ơn bạn');
     }, (error)=>{
         showErrorToast(error.text);
     });
+}
+function ClearInput(){
+    document.getElementById("name").value ='',
+    document.getElementById("email").value ='',
+    document.getElementById("title").value ='',
+    document.getElementById("message").value =''
 }
 
 // Show Toast
@@ -276,10 +284,10 @@ function showSuccessToast(msg) {
         duration: 5000
     });
 }
-function showWarnToast() {
+function showWarnToast(msg) {
     toast({
         title: 'Warning',
-        message: 'Cảnh báo!',
+        message: msg,
         type: 'warn',
         duration: 5000
     });
@@ -292,3 +300,12 @@ function showErrorToast(msg) {
         duration: 5000
     });
 }
+// Auto Slide
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },        
+  });
