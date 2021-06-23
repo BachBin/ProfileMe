@@ -190,19 +190,19 @@ themeButton.addEventListener('click', () => {
 function sendMail(params){
   
     if(document.getElementById("name").value == ""){
-        showErrorToast("Vui lòng nhập tên của bạn, cảm ơn.")
+        showErrorToast("Vui lòng nhập tên của bạn, cảm ơn bạn")
         return false;;
     }
     if(document.getElementById("email").value == ""){
-        showErrorToast("Vui lòng nhập email của bạn, cảm ơn.")
+        showErrorToast("Vui lòng nhập email của bạn, cảm ơn bạn")
         return false;
     }
     if(document.getElementById("title").value == ""){
-        showErrorToast("Vui lòng nhập tiêu đề, cảm ơn.")
+        showErrorToast("Vui lòng nhập tiêu đề, cảm ơn bạn")
         return false;
     }
     if(document.getElementById("message").value == ""){
-        showErrorToast("Vui lòng nhập lời nhắn, cảm ơn.")
+        showErrorToast("Vui lòng nhập lời nhắn, cảm ơn bạn")
         return false;
     }    
 
