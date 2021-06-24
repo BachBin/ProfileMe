@@ -717,7 +717,7 @@ img{
 .contact__content{
     background-color: var(--input-color);
     border-radius: 0.5rem;
-    padding: 0.75rem 1rem 0.25rem;
+    padding: 0.75rem 1rem 0.25rem;    
 }
 .contact__label{
     font-size: var(--smaller-font-size);
@@ -1065,7 +1065,7 @@ img{
         width: 460px;
     }
     .contact__inputs{
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
     }
     .footer__title{
         font-size: var(--h3-font-size);
@@ -1156,3 +1156,12 @@ img{
     right: 20px;
     z-index: 999999;
 }
+/* VALIDATE */
+.contact__content.invalid .form-message { 
+    color: #ff623d;
+    
+}
+.contact__content.invalid .contact__label {
+    color: #ff623d;
+}
+
