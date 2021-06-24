@@ -188,29 +188,21 @@ themeButton.addEventListener('click', () => {
 
 // Send Mail
 function sendMail(params){
-  
-    if(document.getElementById("name").value == ""){
-        showErrorToast("Vui lòng nhập tên của bạn, cảm ơn bạn")
-        return false;;
-    }
-    if(document.getElementById("email").value == ""){
-        showErrorToast("Vui lòng nhập email của bạn, cảm ơn bạn")
+    var namevl = document.getElementById("name").value;
+    var emailvl = document.getElementById("email").value;
+    var titlevl = document.getElementById("title").value;
+    var msgvl = document.getElementById("message").value;
+    
+    if(namevl==''||emailvl==''||titlevl==''||msgvl==''){        
+        showErrorToast("Vui lòng điền hết các trường, cảm ơn bạn")
         return false;
     }
-    if(document.getElementById("title").value == ""){
-        showErrorToast("Vui lòng nhập tiêu đề, cảm ơn bạn")
-        return false;
-    }
-    if(document.getElementById("message").value == ""){
-        showErrorToast("Vui lòng nhập lời nhắn, cảm ơn bạn")
-        return false;
-    }    
 
     var tempParams = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        title: document.getElementById("title").value,
-        message: document.getElementById("message").value,
+        name: namevl,
+        email: emailvl,
+        title: titlevl,
+        message: msgvl,
     };    
     
     emailjs.send('service_225omp3','template_92kow4c',tempParams)
@@ -309,3 +301,81 @@ var swiper = new Swiper(".mySwiper", {
       disableOnInteraction: false,
     },        
   });
+
+//Validate
+
+
+function ValidatorName() {
+    const nameVali = document.getElementById('name')
+    const namecheck = nameVali.value.trim()
+    var parent = nameVali.parentElement;
+    var msgerror = parent.querySelector('.form-message');
+    if(namecheck===''||namecheck===null){        
+        parent.classList.add('invalid');        
+        msgerror.innerHTML = 'Vui lòng nhập trường này.';        
+        return false;
+    }
+    else{
+        parent.classList.remove('invalid');
+        msgerror.innerHTML = '';        
+        return false;
+    } 
+}
+function ValidatorEmail() {
+    var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const emailVali = document.getElementById('email')
+    const emailcheck = emailVali.value.trim()
+    var parent = emailVali.parentElement;
+    var msgerror = parent.querySelector('.form-message');
+    if(emailcheck===''||emailcheck===null){        
+        parent.classList.add('invalid');        
+        msgerror.innerHTML = 'Vui lòng nhập trường này.';
+        return false;
+    }
+    else{
+        if(regex.test(emailcheck)===false){
+            parent.classList.add('invalid');        
+            msgerror.innerHTML = 'Vui lòng nhập đúng Email.';
+            return false;
+        }        
+        parent.classList.remove('invalid');
+        msgerror.innerHTML = '';
+        return false;
+    } 
+}
+
+function ValidatorTitle() {
+    const titleVali = document.getElementById('title')
+    const titlecheck = titleVali.value.trim()
+    var parent = titleVali.parentElement;
+    var msgerror = parent.querySelector('.form-message');
+    if(titlecheck===''||titlecheck===null){        
+        parent.classList.add('invalid');        
+        msgerror.innerHTML = 'Vui lòng nhập trường này.';
+        return false;
+    }
+    else{
+        parent.classList.remove('invalid');
+        msgerror.innerHTML = '';
+        return false;
+    } 
+}
+
+function ValidatorMessage() {
+    const messageVali = document.getElementById('message')
+    const messagecheck = messageVali.value.trim()
+    var parent = messageVali.parentElement;
+    var msgerror = parent.querySelector('.form-message');
+    if(messagecheck===''||messagecheck===null){        
+        parent.classList.add('invalid');        
+        msgerror.innerHTML = 'Vui lòng nhập trường này.';
+        return false;
+    }
+    else{
+        parent.classList.remove('invalid');
+        msgerror.innerHTML = '';
+        return false;
+    } 
+}
+
+
