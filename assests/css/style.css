@@ -437,7 +437,7 @@ img{
     width: 80%;
 }
 .skills__php,.skills__react{
-    width: 0%;
+    width: 50%;
 }
 .skills__close .skills__list{
     height: 0;
