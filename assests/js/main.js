@@ -312,7 +312,7 @@ function ValidatorName() {
     var msgerror = parent.querySelector('.form-message');
     if(namecheck===''||namecheck===null){        
         parent.classList.add('invalid');        
-        msgerror.innerHTML = 'Vui lòng nhập trường này.';        
+        msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';        
         return false;
     }
     else{
@@ -329,13 +329,13 @@ function ValidatorEmail() {
     var msgerror = parent.querySelector('.form-message');
     if(emailcheck===''||emailcheck===null){        
         parent.classList.add('invalid');        
-        msgerror.innerHTML = 'Vui lòng nhập trường này.';
+        msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';
         return false;
     }
     else{
         if(regex.test(emailcheck)===false){
             parent.classList.add('invalid');        
-            msgerror.innerHTML = 'Vui lòng nhập đúng Email.';
+            msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập đúng Email.';
             return false;
         }        
         parent.classList.remove('invalid');
@@ -351,7 +351,7 @@ function ValidatorTitle() {
     var msgerror = parent.querySelector('.form-message');
     if(titlecheck===''||titlecheck===null){        
         parent.classList.add('invalid');        
-        msgerror.innerHTML = 'Vui lòng nhập trường này.';
+        msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';
         return false;
     }
     else{
@@ -368,7 +368,7 @@ function ValidatorMessage() {
     var msgerror = parent.querySelector('.form-message');
     if(messagecheck===''||messagecheck===null){        
         parent.classList.add('invalid');        
-        msgerror.innerHTML = 'Vui lòng nhập trường này.';
+        msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';
         return false;
     }
     else{
@@ -377,5 +377,3 @@ function ValidatorMessage() {
         return false;
     } 
 }
-
-
