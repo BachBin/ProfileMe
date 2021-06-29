@@ -315,6 +315,11 @@ function ValidatorName() {
         msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';        
         return false;
     }
+    else if(!isNaN(namecheck)){
+        parent.classList.add('invalid');        
+        msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập đúng tên.';        
+        return false;
+    }
     else{
         parent.classList.remove('invalid');
         msgerror.innerHTML = '';        
@@ -331,9 +336,9 @@ function ValidatorEmail() {
         parent.classList.add('invalid');        
         msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';
         return false;
-    }
+    }   
     else{
-        if(regex.test(emailcheck)===false){
+        if(regex.test(emailcheck)===false||!isNaN(emailcheck)){
             parent.classList.add('invalid');        
             msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập đúng Email.';
             return false;
@@ -352,6 +357,11 @@ function ValidatorTitle() {
     if(titlecheck===''||titlecheck===null){        
         parent.classList.add('invalid');        
         msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập trường này.';
+        return false;
+    }
+    else if(!isNaN(titlecheck)){
+        parent.classList.add('invalid');        
+        msgerror.innerHTML = '<i class="fas fa-exclamation-circle"></i> Vui lòng nhập đúng tiêu đề.';        
         return false;
     }
     else{
