@@ -433,12 +433,12 @@ img{
 .skills__css,
 .skills__js,
 .skills__photoshop,
-.skills__lightroom{
+.skills__lightroom,
+.skills__php,
+.skills__react{
     width: 80%;
 }
-.skills__php,.skills__react{
-    width: 50%;
-}
+
 .skills__close .skills__list{
     height: 0;
     overflow: hidden;
