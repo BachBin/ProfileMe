@@ -194,7 +194,7 @@ function sendMail(params){
     var msgvl = document.getElementById("message").value;
     
     if(namevl==''||emailvl==''||titlevl==''||msgvl==''){        
-        showErrorToast("Vui lòng điền hết các trường, cảm ơn bạn")
+        showErrorToast("Vui lòng điền hết các trường, cảm ơn")
         return false;
     }
 
@@ -209,7 +209,7 @@ function sendMail(params){
     .then((result)=>{
         // Clear Input
         ClearInput();        
-        showSuccessToast('Tin nhắn đã được gửi, cảm ơn bạn');
+        showSuccessToast('Tin nhắn đã được gửi, cảm ơn');
     }, (error)=>{
         showErrorToast(error.text);
     });
