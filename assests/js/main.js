@@ -187,6 +187,20 @@ themeButton.addEventListener('click', () => {
 })
 
 // Send Mail
+function sendmail(mail,name,title,msg){
+    showSuccessToast('Tin nhắn đang được gửi'); 
+    emailjs.send("service_225omp3","template_92kow4c",{
+        email: mail,
+        name: name,
+        title: title,
+        message: msg,
+        }).then(function(res){
+            showSuccessToast('Tin nhắn đã được gửi đến tôi');
+        },function(er){
+            showErrorToast(er.text);                                
+        });    
+}
+
 function sendMail(params){
     var namevl = document.getElementById("name").value;
     var emailvl = document.getElementById("email").value;
@@ -194,25 +208,13 @@ function sendMail(params){
     var msgvl = document.getElementById("message").value;
     
     if(namevl==''||emailvl==''||titlevl==''||msgvl==''){        
-        showErrorToast("Vui lòng điền hết các trường, cảm ơn")
+        showErrorToast("Vui lòng điền hết các trường")
         return false;
-    }
+    }   
 
-    var tempParams = {
-        name: namevl,
-        email: emailvl,
-        title: titlevl,
-        message: msgvl,
-    };    
-    
-    emailjs.send('service_225omp3','template_92kow4c',tempParams)
-    .then((result)=>{
-        // Clear Input
-        ClearInput();        
-        showSuccessToast('Tin nhắn đã được gửi, cảm ơn');
-    }, (error)=>{
-        showErrorToast(error.text);
-    });
+    sendmail(emailvl,namevl,titlevl,msgvl);
+    ClearInput();
+           
 }
 function ClearInput(){
     document.getElementById("name").value ='',
@@ -220,7 +222,13 @@ function ClearInput(){
     document.getElementById("title").value ='',
     document.getElementById("message").value =''
 }
-
+// Event Enter Send Mail
+document.getElementById("btn-mail").addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+    	document.getElementById("btn-mail").click();
+		return false;
+    }
+});
 // Show Toast
 function toast({
     title = '', 
