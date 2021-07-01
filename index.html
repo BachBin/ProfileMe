@@ -11,15 +11,7 @@
     <link rel="stylesheet" href="assests/css/swiper-bundle.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assests/css/style.css">
-    <title>Bạch Bin</title>
-    <!-- Send Mail -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-    (function() {
-    emailjs.init("user_F4YQRGpUscKcwYAw04GMl");
-    })();
-    </script>    
-   
+    <title>Bạch Bin</title>  
 </head>
 <body>
     <!-- Header -->
@@ -756,13 +748,13 @@
                     <div class="contact__inputs grid">                       
                         <div class="contact__content">
                             <label for="" class="contact__label">Name</label>
-                            <input type="text" class="contact__input" name="Name" id="name" onblur="ValidatorName()" oninput="ValidatorName()">                            
+                            <input type="text" class="contact__input" name="Name" id="name" tabindex="1" onblur="ValidatorName()" oninput="ValidatorName()">                            
                             <small class="form-message"></small>
                         </div>                                            
                         
                         <div class="contact__content">
                             <label for="" class="contact__label">Email</label>
-                            <input type="email" class="contact__input" name="Email" id="email" onblur="ValidatorEmail()" oninput="ValidatorEmail()">
+                            <input type="email" class="contact__input" name="Email" id="email" tabindex="2" onblur="ValidatorEmail()" oninput="ValidatorEmail()">
                             <small class="form-message"></small>
                         </div> 
                                                                   
@@ -770,19 +762,19 @@
                     </div>
                     <div class="contact__content">
                         <label for="" class="contact__label">Subject</label>
-                        <input type="text" class="contact__input" name="Title" id="title" onblur="ValidatorTitle()" oninput="ValidatorTitle()">
+                        <input type="text" class="contact__input" name="Title" id="title" tabindex="3" onblur="ValidatorTitle()" oninput="ValidatorTitle()">
                         <small class="form-message"></small>                  
                     </div>    
                                                      
 
                     <div class="contact__content">
                         <label for="" class="contact__label">Message</label>
-                        <textarea name="Message" id="message" cols="0" rows="7" class="contact__input" onblur="ValidatorMessage()" oninput="ValidatorMessage()"></textarea>
+                        <textarea name="Message" id="message" cols="0" rows="7" class="contact__input" tabindex="4" onblur="ValidatorMessage()" oninput="ValidatorMessage()"></textarea>
                         <small class="form-message"></small>
                     </div>                                                        
 
                     <div>
-                        <a class="button button--flex" onclick="sendMail()">
+                        <a class="button button--flex" id="btn-mail" tabindex="5" onclick="sendMail()">
                             Send Message
                             <i class="uil uil-message button__icon"></i>
                          </a>
@@ -840,8 +832,11 @@
     <script src="assests/js/main.js"></script>
 
     <!-- Send Mail -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_F4YQRGpUscKcwYAw04GMl");
+    })();
+    </script>
 </body>
 </html>
